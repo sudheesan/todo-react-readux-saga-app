@@ -1,6 +1,6 @@
-import { put, takeLatest, all } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import { ADD_TODO_ASYNC } from '../actions/actionTypes';
-import { addTodo } from '../actions/addTodoAction';
+import { addTodo } from '../actions/todoAction';
 
 export const addTodoAsync =  function*() {
   const response = yield fetch('https://reqres.in/api/users/1');
@@ -9,10 +9,6 @@ export const addTodoAsync =  function*() {
   yield put(addTodo(newTodo));
 };
 
-export function* watchAddTodoAsync() {
+export default function* watchAddTodoAsync() {
   yield takeLatest(ADD_TODO_ASYNC, addTodoAsync);
-}
-
-export default function* rootSaga() {
-  yield all([watchAddTodoAsync()]);
 }

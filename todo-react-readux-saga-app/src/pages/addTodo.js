@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodoAsync } from '../actions/addTodoAction';
+import { addTodoAsync } from '../actions/todoAction';
 
 function AddTodo({ addTodoAsync }) {
   return (

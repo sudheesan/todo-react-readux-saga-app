@@ -1,2 +1,4 @@
 export const ADD_TODO = 'ADD_TODO';
 export const ADD_TODO_ASYNC = 'ADD_TODO_ASYNC';
+export const FETCH_INITIAL_TODOS = "FETCH_INITIAL_TODOS";
+export const SET_INITIAL_TODOS = "SET_INITIAL_TODOS";
