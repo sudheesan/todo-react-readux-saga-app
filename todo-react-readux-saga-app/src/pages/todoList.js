@@ -12,8 +12,10 @@ function TodoList({ todos }) {
   );
 }
 const mapStateToProps = state => {
+  const newState = state.todoReducer.toJS();
+  console.log(newState);
   return {
-    todos: state.todoReducer.todos
+    todos: newState.todos
   };
 };
 
