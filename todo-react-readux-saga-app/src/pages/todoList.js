@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchInitialTodos } from '../actions/todoAction';
-
+import { nonEmptyTodoSelector } from  '../reducers/todoReducer'
 function TodoList({ todos }) {
   return (
     <>
@@ -13,9 +13,8 @@ function TodoList({ todos }) {
 }
 const mapStateToProps = state => {
   const newState = state.todoReducer.toJS();
-  console.log(newState);
   return {
-    todos: newState.todos
+    todos: nonEmptyTodoSelector(newState)
   };
 };
 

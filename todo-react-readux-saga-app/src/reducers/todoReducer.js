@@ -1,4 +1,6 @@
 import { ADD_TODO, FETCH_INITIAL_TODOS } from '../actions/actionTypes';
+import { createSelector } from 'reselect';
+
 const { Map, List } = require('immutable');
 
 const initialState = Map({ todos: List(['get up', 'to work', 'go home']) });
@@ -16,4 +18,12 @@ const todoReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export const todoSelector = state => state.todos;
+
+export const nonEmptyTodoSelector = createSelector([todoSelector], todos=>{
+  return todos.filter((todo) => todo.length > 1);
+
+});
+
 export default todoReducer;
