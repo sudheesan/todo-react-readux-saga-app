@@ -4,7 +4,7 @@ import { addTodoAsync } from '../actions/todoAction';
 
 function AddTodo({ addTodoAsync }) {
   return (
-    <div>
+    <div className="add-todo-button">
       <button
         onClick={e => {
           addTodoAsync();
